@@ -1,60 +1,78 @@
 :root {
-    --primary-color: #00ff9d;
-    --secondary-color: #0a1930;
-    --accent-color: #00f7ff;
-    --text-color: #ffffff;
-    --font-main: 'Space Grotesk', sans-serif;
-    --font-code: 'Fira Code', monospace;
+    --primary-color: #0a192f;
+    --secondary-color: #64ffda;
+    --text-color: #ccd6f6;
+    --background-color: #0a192f;
 }
 
 body {
-    font-family: var(--font-main);
-    background: var(--secondary-color);
+    background-color: var(--background-color);
+    font-family: 'Space Grotesk', sans-serif;
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
-/* CS Animation */
-.cs-animation {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-}
-
-.cs-text {
-    font-size: 15vw;
-    font-weight: 700;
-    display: flex;
-    gap: 2vw;
-}
-
-.cs-letter {
+.hero-section {
     position: relative;
-    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: magneticPulse 4s infinite;
+    height: 100vh;
+    overflow: hidden;
 }
 
-/* Magnetic Field Animation */
-.magnetic-field {
+#earth-animation {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, transparent 0%, rgba(0,247,255,0.1) 50%, transparent 100%);
-    animation: fieldPulse 8s infinite;
+    z-index: 1;
 }
 
-@keyframes magneticPulse {
-    0%, 100% { transform: scale(1); filter: brightness(1); }
-    50% { transform: scale(1.05); filter: brightness(1.2); }
+.cs-logo {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20vh;
 }
 
-@keyframes fieldPulse {
-    0% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.2); opacity: 0.8; }
-    100% { transform: scale(1); opacity: 0.5; }
+.cs-container {
+    width: 300px;
+    height: 150px;
 }
+
+.cs-svg path {
+    fill: none;
+    stroke: var(--secondary-color);
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.magnetic-field {
+    opacity: 0.6;
+    stroke-dasharray: 10;
+    animation: flowField 3s linear infinite;
+}
+
+@keyframes flowField {
+    to {
+        stroke-dashoffset: -20;
+    }
+}
+
+.glitch-text {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--text-color);
+    position: relative;
+}
+
+.typewriter {
+    font-family: 'Fira Code', monospace;
+    border-right: 2px solid var(--secondary-color);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Add more styling for projects section, cards, etc. */

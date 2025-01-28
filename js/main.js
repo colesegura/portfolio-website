@@ -54,7 +54,74 @@ class MagneticField {
     }
 }
 
+class SmoothScroll {
+    constructor() {
+        this.links = document.querySelectorAll('.nav-link');
+        this.init();
+    }
+
+    init() {
+        this.links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    }
+}
+
+class ProjectsGrid {
+    constructor() {
+        this.projects = document.querySelectorAll('.project-card');
+        this.init();
+    }
+
+    init() {
+        this.projects.forEach(project => {
+            project.addEventListener('click', () => this.expandProject(project));
+        });
+    }
+
+    expandProject(project) {
+        const modal = document.createElement('div');
+        modal.className = 'project-modal';
+        
+        // Create modal content based on project data
+        modal.innerHTML = `
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>${project.querySelector('h3').textContent}</h2>
+                    <button class="close-modal">×</button>
+                </div>
+                <div class="modal-body">
+                    <!-- Project details -->
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+        
+        // Animate modal entrance
+        requestAnimationFrame(() => {
+            modal.classList.add('active');
+        });
+
+        // Handle close
+        modal.querySelector('.close-modal').addEventListener('click', () => {
+            modal.classList.remove('active');
+            setTimeout(() => modal.remove(), 300);
+        });
+    }
+}
+
 // Initialize magnetic field
 document.addEventListener('DOMContentLoaded', () => {
     new MagneticField();
+    new SmoothScroll();
+    new ProjectsGrid();
 });

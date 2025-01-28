@@ -9,6 +9,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
 </head>
 
+<header class="main-header">
+    <div class="floating-cs-logo">
+        <svg class="cs-svg" viewBox="0 0 200 100">
+            <path class="c-path" d="M50,75 C20,75 20,25 50,25"/>
+            <path class="s-path" d="M100,25 C130,25 130,50 100,50 C70,50 70,75 100,75"/>
+            <path class="magnetic-field" d="..."/>
+        </svg>
+    </div>
+    <nav class="main-nav">
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+            <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+            <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+            <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+            <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+        <div class="nav-indicator"></div>
+    </nav>
+</header>
+
 <section id="home" class="hero-section">
     <canvas id="earth-animation"></canvas>
     <div class="hero-content">
@@ -36,66 +56,54 @@
 <section id="projects" class="projects-section">
     <div class="container">
         <h2 class="section-title">Featured Projects</h2>
-        <div class="row">
-            <!-- GeoMagnetic Monitor Project -->
-            <div class="col-lg-4" data-aos="fade-up">
-                <div class="project-card">
+        <div class="projects-grid">
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-preview">
                     <div class="project-image">
-                        <img src="images/geomagnetic-monitor.jpg" alt="GeoMagnetic Monitor Project">
+                        <img src="images/geomagnetic-monitor.jpg" alt="GeoMagnetic Monitor">
                         <div class="project-overlay">
-                            <div class="project-tech">
-                                <span>React</span>
-                                <span>Node.js</span>
-                                <span>Three.js</span>
-                                <span>MongoDB</span>
-                            </div>
+                            <span class="expand-icon">+</span>
                         </div>
                     </div>
-                    <div class="project-content">
+                    <div class="project-brief">
                         <h3>GeoMagnetic Monitor</h3>
-                        <p>A real-time visualization platform tracking Earth's magnetic field variations, featuring historical data analysis and predictive modeling.</p>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-outline-primary">View Project</a>
-                            <a href="#" class="btn btn-outline-secondary">Live Demo</a>
+                        <div class="tech-stack">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Three.js</span>
                         </div>
                     </div>
                 </div>
             </div>
             
             <!-- Future Project Placeholder -->
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="project-card coming-soon">
-                    <div class="project-image">
-                        <div class="placeholder-content">
-                            <span>Coming Soon</span>
-                        </div>
+            <div class="project-card coming-soon">
+                <div class="project-image">
+                    <div class="placeholder-content">
+                        <span>Coming Soon</span>
                     </div>
-                    <div class="project-content">
-                        <h3>Future Innovation</h3>
-                        <p>An exciting project currently in development. Stay tuned for something extraordinary.</p>
-                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Future Innovation</h3>
+                    <p>An exciting project currently in development. Stay tuned for something extraordinary.</p>
                 </div>
             </div>
 
             <!-- PodcastSearch Project -->
-            <div class="col-lg-4" data-aos="fade-up">
-                <div class="project-card">
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-preview">
                     <div class="project-image">
-                        <img src="images/podcast-search.jpg" alt="PodcastSearch Project">
+                        <img src="images/podcast-search.jpg" alt="PodcastSearch">
                         <div class="project-overlay">
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>C#</span>
-                                <span>JavaScript</span>
-                            </div>
+                            <span class="expand-icon">+</span>
                         </div>
                     </div>
-                    <div class="project-content">
+                    <div class="project-brief">
                         <h3>PodcastSearch</h3>
-                        <p>A sophisticated search engine for podcast transcripts, enabling content discovery through advanced text analysis.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/colesegura/PodcastSearch" class="btn btn-outline-primary">View Project</a>
-                            <a href="#" class="btn btn-outline-secondary">Live Demo</a>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>C#</span>
+                            <span>JavaScript</span>
                         </div>
                     </div>
                 </div>

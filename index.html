@@ -1,56 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Add these meta tags for better SEO and responsiveness -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cole Segura - Software Developer Portfolio">
-    <meta name="keywords" content="software developer, portfolio, projects, computer science">
+    <title>Cole Segura - Portfolio</title>
+
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Update title -->
-    <title>Cole Segura | Software Developer</title>
+    <!-- Add Particles.js for interactive background -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
-    <!-- Add Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Add your custom CSS -->
-    <link href="css/styles.css" rel="stylesheet">
+    <!-- AOS CSS for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Typed.js for typing animation -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
     <!-- Update navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">CS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <!-- Add a proper hero section -->
+    <!-- Enhanced hero section -->
     <section id="home" class="hero-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h1>Cole Segura</h1>
-                    <h2>Software Developer</h2>
-                    <p class="lead">Computer Science Student passionate about creating innovative solutions</p>
+        <div id="particles-js"></div>
+        <div class="container position-relative">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-lg-8 text-start">
+                    <h1 class="display-1 fw-bold" data-aos="fade-up">
+                        <span class="gradient-text">Cole Segura</span>
+                    </h1>
+                    <h2 class="typed-text" data-aos="fade-up" data-aos-delay="100"></h2>
+                    <p class="lead mt-4" data-aos="fade-up" data-aos-delay="200">
+                        Crafting elegant solutions to complex problems through innovative software development
+                    </p>
+                    <div class="mt-5" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#projects" class="btn btn-primary btn-lg me-3">View Projects</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg">Contact Me</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Add Bootstrap JS and its dependencies at the end of body -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-lg-4" data-aos="fade-up">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/placeholder1.jpg" alt="Project 1">
+                            <div class="project-overlay">
+                                <div class="project-tech">
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Project One</h3>
+                            <p>Description of your first impressive project. Highlight the problem it solves and your innovative approach.</p>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-outline-primary">View Project</a>
+                                <a href="#" class="btn btn-outline-secondary">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add similar blocks for Project 2 and 3 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Add before closing body tag -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

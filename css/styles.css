@@ -44,7 +44,7 @@ body {
 .cs-svg path {
     fill: none;
     stroke: var(--secondary-color);
-    stroke-width: 2;
+    stroke-width: 3;
     stroke-linecap: round;
 }
 
@@ -90,19 +90,11 @@ body {
 
 .floating-cs-logo {
     position: fixed;
-    top: 2rem;
-    left: 2rem;
-    width: 50px;
-    height: 50px;
-    animation: floatRotate 10s infinite linear;
-}
-
-@keyframes floatRotate {
-    0% { transform: rotate(0deg) translateY(0px); }
-    25% { transform: rotate(90deg) translateY(-5px); }
-    50% { transform: rotate(180deg) translateY(0px); }
-    75% { transform: rotate(270deg) translateY(5px); }
-    100% { transform: rotate(360deg) translateY(0px); }
+    top: 1rem;
+    left: 1rem;
+    width: 40px;
+    height: 40px;
+    z-index: 1000;
 }
 
 .main-nav {
@@ -147,9 +139,11 @@ body {
 /* Projects Grid */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 2rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .project-card {
@@ -159,6 +153,9 @@ body {
     background: rgba(255, 255, 255, 0.03);
     transition: transform 0.3s ease;
     cursor: pointer;
+    aspect-ratio: 16/9;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .project-card:hover {
@@ -192,6 +189,47 @@ body {
 
 .project-card:hover .expand-icon {
     transform: scale(1);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .glitch-text {
+        font-size: 2.5rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-cs-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .glitch-text {
+        font-size: 2rem;
+    }
+
+    .project-card {
+        aspect-ratio: 3/4;
+    }
 }
 
 /* Add more styling for projects section, cards, etc. */

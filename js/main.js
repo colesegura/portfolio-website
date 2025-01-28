@@ -1,6 +1,10 @@
+// Add this at the top of main.js
+console.log('Main.js loaded');
+
 // Magnetic Field Visualization
 class MagneticField {
     constructor() {
+        console.log('Initializing MagneticField');
         this.canvas = document.createElement('canvas');
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
@@ -119,9 +123,14 @@ class ProjectsGrid {
     }
 }
 
-// Initialize magnetic field
+// Update the initialization
 document.addEventListener('DOMContentLoaded', () => {
-    new MagneticField();
-    new SmoothScroll();
-    new ProjectsGrid();
+    console.log('DOM Content Loaded');
+    try {
+        new MagneticField();
+        new SmoothScroll();
+        new ProjectsGrid();
+    } catch (error) {
+        console.error('Error initializing components:', error);
+    }
 });
